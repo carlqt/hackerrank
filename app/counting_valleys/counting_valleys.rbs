@@ -1,0 +1,9 @@
+# TypeProf 0.21.7
+
+# Classes
+class CountingValleys
+  STEPS: Hash[String, Integer]
+
+  def self.count: (Integer steps, String path) -> Integer
+  def self.valley_count: (Array[Integer] steps) -> Integer
+end
