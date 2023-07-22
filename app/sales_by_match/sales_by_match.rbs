@@ -1,0 +1,6 @@
+# TypeProf 0.21.3
+
+# Classes
+class SalesByMerchant
+  def self.sock_merchant: (Integer n, untyped arr) -> (Integer)
+end
