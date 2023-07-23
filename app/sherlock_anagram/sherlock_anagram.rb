@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SherlockAnagram
   def self.run(s)
     new.sherlock_anagram(s)
@@ -8,8 +10,8 @@ class SherlockAnagram
     container = Hash.new(0)
 
     # abba -> [a, b, b, a]
-    string_array.each.with_index do |s, i|
-      substring = string_array[i..-1] || []
+    string_array.each.with_index do |_s, i|
+      substring = string_array[i..] || []
 
       substring.size.times do |i2|
         end_index = i2 + i

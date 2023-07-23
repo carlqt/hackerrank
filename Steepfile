@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # D = Steep::Diagnostic
 #
 # target :lib do
@@ -29,8 +31,8 @@
 # end
 
 target :app do
-  check "app"
-  signature "app"
+  check 'app'
+  signature 'app'
 
-  library "set", "pathname"
+  library 'set', 'pathname'
 end

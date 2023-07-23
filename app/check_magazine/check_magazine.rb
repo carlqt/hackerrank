@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 require 'stringio'
 require 'pry'
@@ -12,9 +14,9 @@ def checkMagazine(magazine, note)
   note.each do |word|
     return no if magazine_hash[word].zero?
 
-    if magazine_hash[word] > 0
+    if (magazine_hash[word]).positive?
       magazine_hash[word] -= 1
-      return no if magazine_hash[word] < 0
+      return no if (magazine_hash[word]).negative?
     end
   end
 
@@ -22,18 +24,18 @@ def checkMagazine(magazine, note)
 end
 
 def no
-  puts "No"
+  puts 'No'
 end
 
 def yes
-  puts "Yes"
+  puts 'Yes'
 end
 
-magazine = ""
-note = ""
+magazine = ''
+note = ''
 count = 0
 
-File.foreach("check_magazine_input.txt") do |line|
+File.foreach('check_magazine_input.txt') do |line|
   count += 1
 
   case count

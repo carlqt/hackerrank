@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require_relative '../app/sherlock_anagram/sherlock_anagram'
 
 describe SherlockAnagram do
-  describe "#run" do
+  describe '#run' do
     subject { described_class.run(input) }
 
     context "when input 'ifailuhkqq'" do
@@ -42,13 +44,17 @@ describe SherlockAnagram do
     end
 
     context 'when input is ifailuhkqqhucpoltgtyovarjsnrbfpvmupwjjjfiwwhrlkpekxxnebfrwibylcvkfealgonjkzwlyfhhkefuvgndgdnbelgruel' do
-      let(:input) { 'ifailuhkqqhucpoltgtyovarjsnrbfpvmupwjjjfiwwhrlkpekxxnebfrwibylcvkfealgonjkzwlyfhhkefuvgndgdnbelgruel'}
+      let(:input) do
+        'ifailuhkqqhucpoltgtyovarjsnrbfpvmupwjjjfiwwhrlkpekxxnebfrwibylcvkfealgonjkzwlyfhhkefuvgndgdnbelgruel'
+      end
 
-      it { is_expected.to eq 399}
+      it { is_expected.to eq 399 }
     end
 
     context 'when input is gffryqktmwocejbxfidpjfgrrkpowoxwggxaknmltjcpazgtnakcfcogzatyskqjyorcftwxjrtgayvllutrjxpbzggjxbmxpnde' do
-      let(:input) { 'gffryqktmwocejbxfidpjfgrrkpowoxwggxaknmltjcpazgtnakcfcogzatyskqjyorcftwxjrtgayvllutrjxpbzggjxbmxpnde' }
+      let(:input) do
+        'gffryqktmwocejbxfidpjfgrrkpowoxwggxaknmltjcpazgtnakcfcogzatyskqjyorcftwxjrtgayvllutrjxpbzggjxbmxpnde'
+      end
 
       it { is_expected.to eq 471 }
     end

@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class CountingValleys
   STEPS = {
     'D' => -1,
     'U' => 1
-  }
+  }.freeze
 
-  def self.count(steps, path)
+  def self.count(_steps, path)
     path_arr = path.chars
     tracking_steps = [0]
 
@@ -18,13 +20,11 @@ class CountingValleys
 
   def self.valley_count(steps)
     count = 0
-    
+
     steps.each.with_index do |s, i|
       next if i.zero?
 
-      if steps[i-1].zero? && s == -1
-        count += 1
-      end
+      count += 1 if steps[i - 1].zero? && s == -1
     end
 
     count

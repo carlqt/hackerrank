@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'net/http'
 require 'json'
 
@@ -12,9 +14,9 @@ class DependencyGetter
   end
 
   def fetch_dependency
-    return [] if $global_stash[@package_name] || json_body["dependencies"].nil?
+    return [] if $global_stash[@package_name] || json_body['dependencies'].nil?
 
-    $global_stash[@package_name] ||= json_body["dependencies"].keys
+    $global_stash[@package_name] ||= json_body['dependencies'].keys
   end
 
   def json_body
@@ -27,7 +29,7 @@ class DependencyGetter
 end
 
 def get_dependencies(input)
-  packages =  DependencyGetter.new(input).fetch_dependency
+  packages = DependencyGetter.new(input).fetch_dependency
   return if packages.empty?
 
   packages.each do |package|
@@ -40,4 +42,4 @@ def get_all_dependencies(input)
   $global_stash.keys
 end
 
-get_all_dependencies("forever")
+get_all_dependencies('forever')

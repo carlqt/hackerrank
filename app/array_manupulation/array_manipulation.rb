@@ -1,21 +1,21 @@
+# frozen_string_literal: true
+
 require 'pry'
 
-test_input = [[2,6,8],[3,5,7],[1,8,1],[5,9,15]]
-
-def array_manipulation(n, queries)
+def array_manipulation(_n, queries)
   input = Hash.new(0)
 
   queries.each do |row|
-    a,b,k = row
+    a, b, k = row
     input[a] += k
-    input[b+1] -= k
+    input[b + 1] -= k
   end
 
   greatest_value = 0
   sorted_keys = input.keys.sort
   tmp = 0
 
-  sorted_keys.each_with_index do |e, i|
+  sorted_keys.each_with_index do |e, _i|
     tmp += input[e]
 
     greatest_value = tmp if tmp > greatest_value

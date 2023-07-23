@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require_relative '../app/repeated_string/repeated_string'
 
 describe RepeatedString do
-  describe ".run" do
+  describe '.run' do
     subject { described_class.run(s, n) }
 
-    context "when n=10 and s=abcac" do
+    context 'when n=10 and s=abcac' do
       let(:s) { 'abcac' }
       let(:n) { 10 }
 
@@ -21,9 +23,9 @@ describe RepeatedString do
 
     context 'when s=a and n=1000000000000' do
       let(:s) { 'a' }
-      let(:n) { 1000000000000 }
+      let(:n) { 1_000_000_000_000 }
 
-      it { is_expected.to eq 1000000000000 }
+      it { is_expected.to eq 1_000_000_000_000 }
     end
   end
 end
