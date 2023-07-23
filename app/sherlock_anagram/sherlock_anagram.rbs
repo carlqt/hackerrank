@@ -4,6 +4,5 @@
 class SherlockAnagram
   def self.run: (String s) -> Integer
   def substrings: (String string) -> Hash[String, Integer]
-  def anagram?: (String str1, String str2) -> bool
   def sherlock_anagram: (String str) -> Integer
 end

@@ -60,13 +60,13 @@ describe SherlockAnagram do
     end
   end
 
-  # describe '#substrings' do
-  #   subject { described_class.new.substrings(input) }
+  describe '#substrings' do
+    subject { described_class.new.substrings(input) }
 
-  #   context 'when input is abba' do
-  #     let(:input) { 'abba' }
+    context 'when input is abba' do
+      let(:input) { 'abba' }
 
-  #     it { is_expected.to eq ['a','ab','abb','abba','b','bb','bba','b','ba','a']  }
-  #   end
-  # end
+      it { is_expected.to eq({ 'a' => 2, 'aabb' => 1, 'ab' => 2, 'abb' => 2, 'b' => 2, 'bb' => 1 }) }
+    end
+  end
 end
